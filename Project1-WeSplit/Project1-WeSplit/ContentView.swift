@@ -7,6 +7,30 @@
 
 import SwiftUI
 
+///Modifiers
+struct CustomizeView: ViewModifier {
+    
+    var noTips: Bool
+    
+    func body(content: Content) -> some View {
+        content
+            //.foregroundColor(.white)
+            .padding()
+            .border(noTips ? Color.red : Color.white, width: 1.5)
+            //.background(noTips ? Color.red : Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+    
+}
+
+extension View {
+    
+    func titleStyle(_ noTips: Bool) -> some View {
+        self.modifier(CustomizeView(noTips: noTips))
+    }
+    
+}
+
 struct ContentView: View {
     
     @State private var amount = ""
@@ -17,7 +41,7 @@ struct ContentView: View {
     private let tipPercentages = [10, 15, 20, 25, 0]
     
     var totalAmount: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+        
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(amount) ?? 0
 
@@ -46,8 +70,12 @@ struct ContentView: View {
             Form {
                 
                 Section {
+                    
+                    let noTips = tipPercentage == 4 ? true : false
+                    
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
+                        .titleStyle(noTips)
                     
                     Picker("How many people to split?", selection: $numberOfPeople) {
                         ForEach(2 ..< 100) {
