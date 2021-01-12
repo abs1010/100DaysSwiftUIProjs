@@ -19,9 +19,11 @@ struct ContentView: View {
         
         ZStack {
             
-            AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center).edgesIgnoringSafeArea(.all)
+            //AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 10) {
+            VStack(spacing: 30) {
                 
                 Text("Tap the Flag...")
                     .foregroundColor(.white)
@@ -64,7 +66,7 @@ struct ContentView: View {
     private func flagTapped(_ number: Int) {
         
         if number == correctAnswer {
-            scoreTitle = "Correct! That's \(countries[correctAnswer].capitalized) flag."
+            scoreTitle = "Correct!\n\n That's \(countries[correctAnswer].capitalized) flag."
             self.score += 1
         } else {
             scoreTitle = "Wrong! This is the flag of \(countries[number].capitalized)"
