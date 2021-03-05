@@ -13,6 +13,7 @@
 		BC67DCF325954C4300E850CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC67DCF225954C4300E850CE /* Assets.xcassets */; };
 		BC67DCF625954C4300E850CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC67DCF525954C4300E850CE /* Preview Assets.xcassets */; };
 		BC67DCF925954C4300E850CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC67DCF725954C4300E850CE /* LaunchScreen.storyboard */; };
+		BC969E5F25B63B0400D5E6AA /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC969E5E25B63B0400D5E6AA /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC67DCF525954C4300E850CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC67DCF825954C4300E850CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC67DCFA25954C4300E850CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC969E5E25B63B0400D5E6AA /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BC67DCF225954C4300E850CE /* Assets.xcassets */,
 				BC67DCF725954C4300E850CE /* LaunchScreen.storyboard */,
 				BC67DCFA25954C4300E850CE /* Info.plist */,
+				BC969E5E25B63B0400D5E6AA /* SleepCalculator.mlmodel */,
 				BC67DCF425954C4300E850CE /* Preview Content */,
 			);
 			path = BetterRest;
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC67DCED25954C4200E850CE /* AppDelegate.swift in Sources */,
+				BC969E5F25B63B0400D5E6AA /* SleepCalculator.mlmodel in Sources */,
 				BC67DCEF25954C4200E850CE /* SceneDelegate.swift in Sources */,
 				BC67DCF125954C4200E850CE /* ContentView.swift in Sources */,
 			);
