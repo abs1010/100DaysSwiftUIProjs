@@ -33,30 +33,38 @@ struct MissionView: View {
                     
                     Text(self.mission.description)
                         .padding()
+                        .layoutPriority(1)
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
-                        HStack {
+                        
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
                             
-                            Image(crewMember.astronaut.id)
-                                .resizable()
-                                .frame(width: 83, height: 60)
-                                .clipShape(Capsule())
-                                .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
-
-                            VStack(alignment: .leading) {
+                            HStack {
                                 
-                                Text(crewMember.astronaut.name)
-                                    .font(.headline)
+                                Image(crewMember.astronaut.id)
+                                    .resizable()
+                                    .frame(width: 83, height: 60)
+                                    .clipShape(Capsule())
+                                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
                                 
-                                Text(crewMember.role)
-                                    .foregroundColor(.secondary)
+                                VStack(alignment: .leading) {
+                                    
+                                    Text(crewMember.astronaut.name)
+                                        .font(.headline)
+                                    
+                                    Text(crewMember.role)
+                                        .foregroundColor(.secondary)
+                                }
+                                
+                                Spacer()
+                                
                             }
-
-                            Spacer()
+                            
+                            .padding(.horizontal)
                             
                         }
                         
-                        .padding(.horizontal)
+                        .buttonStyle(PlainButtonStyle())
                         
                     }
                     
@@ -77,7 +85,7 @@ struct MissionView: View {
         self.mission = mission
         
         var matches = [CrewMember]()
-
+        
         for member in mission.crew {
             
             if let memberName = astronauts.first(where: { $0.id == member.name }) {
@@ -92,11 +100,11 @@ struct MissionView: View {
             }
             
         }
-
+        
         self.astronauts = matches
         
     }
-        
+    
 }
 
 struct MissionView_Previews: PreviewProvider {
